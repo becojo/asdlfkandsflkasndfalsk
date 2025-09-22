@@ -1,0 +1,21 @@
+name: Go Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: &env-vars
+      TITLE: ${{ github.event.head_commit.message || 'No Title' }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+  echo:
+    runs-on: ubuntu-latest
+    env: *env-vars
+    steps:
+    - name: Echo Title
+      run: |
+        echo "Commit Title: ${{ env.TITLE }}"
