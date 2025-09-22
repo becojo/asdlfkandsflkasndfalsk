@@ -3,6 +3,7 @@ name: Go Build
 on:
   push:
 
+permissions: {}
 
 jobs:
   build:
