@@ -16,6 +16,10 @@ jobs:
       run: |
         echo "Commit Title: ${{ env.TITLE }}"
 
+    - name: Direct
+      run: |
+        echo "Commit Title: ${{ github.event.head_commit.message || 'No Title' }}"
+
   echo:
     runs-on: ubuntu-latest
     env: *env-vars
