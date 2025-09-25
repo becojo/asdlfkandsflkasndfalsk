@@ -18,7 +18,7 @@ jobs:
 
     - name: Direct
       run: |
-        echo "Commit Title: ${{ github.event.head_commit.message || 'No Title' }}"
+        echo "Commit Title: ${{ github.event.head_commit.message }}"
 
   echo:
     runs-on: ubuntu-latest
